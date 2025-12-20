@@ -236,62 +236,73 @@
       </div>
     </div>
   </section>
-  <!-- KONTAKT -->
+       <!-- KONTAKT -->
   <section id="kontakt" class="container mx-auto px-6 py-24 relative z-10 max-w-6xl">
-  <div class="grid md:grid-cols-2 gap-16 items-start">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
 
-    <div>
-      <h2 class="text-4xl md:text-5xl font-extralight mb-8">
-        Porozmawiajmy o Twojej stronie
-      </h2>
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extralight mb-8">
+          Porozmawiajmy o Twojej stronie
+        </h2>
 
-      <p class="text-gray-300 mb-6 leading-relaxed">
-        Jeśli masz pomysł, problem do rozwiązania albo po prostu chcesz
-        sprawdzić, czy to dobry moment na nową stronę — napisz.
-      </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Jeśli masz pomysł, problem do rozwiązania albo po prostu chcesz
+          sprawdzić, czy to dobry moment na nową stronę — napisz.
+        </p>
 
-      <p class="text-gray-400 mb-6">
-        Pierwsza rozmowa jest niezobowiązująca.<br>
-        Odpowiadam zazwyczaj w ciągu 24–48 godzin.
-      </p>
+        <p class="text-gray-400 mb-6">
+          Pierwsza rozmowa jest niezobowiązująca.<br>
+          Odpowiadam zazwyczaj w ciągu 24–48 godzin.
+        </p>
 
-      <div class="text-sm text-gray-400 space-y-2">
-        <p>Email: <a href="mailto:kontakt@mozejewska.studio" class="text-cyan-400">kontakt@mozejewska.studio</a></p>
-        <p>Telefon: <a href="tel:+48604580412" class="text-cyan-400">+48 604 580 412</a></p>
+        <div class="text-sm text-gray-400 space-y-2">
+          <p>Email: <a href="mailto:kontakt@mozejewska.studio" class="text-cyan-400">kontakt@mozejewska.studio</a></p>
+          <p>Telefon: <a href="tel:+48604580412" class="text-cyan-400">+48 604 580 412</a></p>
+        </div>
       </div>
+
+      <!-- Formularz z wysokim kontrastem tekstu -->
+      <form 
+        action="https://formspree.io/f/your-form-id" 
+        method="POST" 
+        class="space-y-7 bg-white/10 border border-cyan-400/20 rounded-2xl p-10 backdrop-blur-md shadow-lg shadow-cyan-500/10">
+
+        <input
+          type="text"
+          name="imie"
+          placeholder="Imię"
+          required
+          class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+
+        <input
+          type="text"
+          name="temat"
+          placeholder="Temat (opcjonalnie)"
+          class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+
+        <textarea
+          name="wiadomosc"
+          rows="7"
+          placeholder="Napisz kilka zdań o projekcie lub problemie"
+          required
+          class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200 resize-none"></textarea>
+
+        <button
+          type="submit"
+          class="w-full bg-cyan-400 text-black font-medium py-5 rounded-xl hover:bg-cyan-300 transition text-lg">
+          Wyślij zapytanie
+        </button>
+      </form>
+
     </div>
-
-    <form class="space-y-6">
-      <input
-        type="text"
-        placeholder="Imię"
-        class="w-full bg-white/5 border border-cyan-400/30 rounded-lg px-6 py-4 focus:border-cyan-400 outline-none transition">
-
-      <input
-        type="email"
-        placeholder="Email"
-        class="w-full bg-white/5 border border-cyan-400/30 rounded-lg px-6 py-4 focus:border-cyan-400 outline-none transition">
-
-      <input
-        type="text"
-        placeholder="Temat (opcjonalnie)"
-        class="w-full bg-white/5 border border-cyan-400/30 rounded-lg px-6 py-4 focus:border-cyan-400 outline-none transition">
-
-      <textarea
-        rows="6"
-        placeholder="Napisz kilka zdań o projekcie lub problemie"
-        class="w-full bg-white/5 border border-cyan-400/30 rounded-lg px-6 py-4 focus:border-cyan-400 outline-none transition"></textarea>
-
-      <button
-        type="submit"
-        class="w-full bg-cyan-400 text-black font-medium py-5 rounded-xl hover:bg-cyan-300 transition">
-        Wyślij zapytanie
-      </button>
-    </form>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="py-12 text-center text-gray-500 text-sm relative z-10">
