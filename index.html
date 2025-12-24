@@ -192,7 +192,7 @@
   <!-- GRADIENT OVERLAY FOR TEXT READABILITY -->
   <div class="overlay-gradient"></div>
 
-  <!-- Ładowanie skryptu Unicorn Studio (asynchronicznie) -->
+  <!-- Ładowanie skryptu Unicorn Studio -->
   <script type="text/javascript">
     !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.async=!0,i.onload=function(){if(!window.UnicornStudio.isInitialized){UnicornStudio.init();window.UnicornStudio.isInitialized=!0}},document.body.appendChild(i)}}();
   </script>
@@ -202,7 +202,6 @@
     <div class="flex items-center justify-between">
       <span class="text-xl md:text-2xl font-medium tracking-tight neon-glow">Ewa Możejewska</span>
 
-      <!-- Desktop Menu -->
       <div class="hidden lg:flex gap-8 xl:gap-10 text-sm text-gray-200">
         <a href="#omnie" class="hover:text-cyan-300 transition duration-300 hover:neon-glow">O mnie</a>
         <a href="#uslugi" class="hover:text-cyan-300 transition duration-300 hover:neon-glow">Zakres</a>
@@ -210,14 +209,12 @@
         <a href="#kontakt" class="hover:text-cyan-300 transition duration-300 hover:neon-glow">Kontakt</a>
       </div>
 
-      <!-- Desktop CTA Button -->
       <div class="hidden lg:block">
         <a href="#kontakt" class="glass-card px-6 py-3 rounded-lg text-sm hover:bg-cyan-400/20 transition duration-300 focus-visible:outline-none hover-lift">
           Porozmawiajmy
         </a>
       </div>
 
-      <!-- Mobile Menu Toggle -->
       <button id="menuToggle" class="lg:hidden text-2xl text-gray-200 hover:text-cyan-300 focus-visible:outline-none" aria-label="Otwórz menu">
         ☰
       </button>
@@ -311,51 +308,54 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES SECTION – ZWIĘKSZONE CZCIONKI -->
   <section id="uslugi" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-center mb-12 md:mb-20 animate-fade-in">
       Zakres współpracy
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
-      <div class="glass-card rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in" style="animation-delay: 0.2s">
-        <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300">START</h3>
-        <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Prosta, estetyczna strona dla małej firmy lub osoby.</p>
-        <ul class="text-sm space-y-1 md:space-y-2 text-gray-200">
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> One Page lub mała strona</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Pomoc w treściach</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Responsywność</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Podstawowe SEO</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Wdrożenie</li>
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
+      <!-- Card 1 -->
+      <div class="glass-card rounded-2xl p-8 md:p-10 lg:p-12 hover-lift animate-fade-in" style="animation-delay: 0.2s">
+        <h3 class="text-2xl md:text-3xl mb-4 md:mb-6 text-cyan-300">START</h3>
+        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">Prosta, estetyczna strona dla małej firmy lub osoby.</p>
+        <ul class="space-y-3 md:space-y-4 text-base text-gray-200">
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> One Page lub mała strona</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Pomoc w treściach</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Responsywność</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Podstawowe SEO</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Wdrożenie</li>
         </ul>
       </div>
 
-      <div class="glass-card-highlight rounded-2xl p-6 md:p-8 lg:p-10 hover-lift transform md:-translate-y-2 animate-fade-in" style="animation-delay: 0.3s">
-        <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300 neon-glow">BUSINESS</h3>
-        <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Strona firmowa z uporządkowaną strukturą i ofertą.</p>
-        <ul class="text-sm space-y-1 md:space-y-2 text-gray-200">
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Kilka podstron</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Logiczna struktura</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Indywidualny projekt</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Frontend + SEO</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Optymalizacja wydajności</li>
+      <!-- Card 2 (Highlighted) -->
+      <div class="glass-card-highlight rounded-2xl p-8 md:p-10 lg:p-12 hover-lift transform md:-translate-y-2 animate-fade-in" style="animation-delay: 0.3s">
+        <h3 class="text-2xl md:text-3xl mb-4 md:mb-6 text-cyan-300 neon-glow">BUSINESS</h3>
+        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">Strona firmowa z uporządkowaną strukturą i ofertą.</p>
+        <ul class="space-y-3 md:space-y-4 text-base text-gray-200">
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Kilka podstron</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Logiczna struktura</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Indywidualny projekt</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Frontend + SEO</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Optymalizacja wydajności</li>
         </ul>
       </div>
 
-      <div class="glass-card rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in" style="animation-delay: 0.4s">
-        <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300">ROZBUDOWANY</h3>
-        <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Dla projektów wymagających spokojnego planowania.</p>
-        <ul class="text-sm space-y-1 md:space-y-2 text-gray-200">
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Konsultacje strategiczne</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Architektura treści</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Rozbudowane wdrożenie</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Wsparcie po starcie</li>
-          <li class="flex items-start"><span class="text-cyan-300 mr-2">•</span> Analiza wyników</li>
+      <!-- Card 3 -->
+      <div class="glass-card rounded-2xl p-8 md:p-10 lg:p-12 hover-lift animate-fade-in" style="animation-delay: 0.4s">
+        <h3 class="text-2xl md:text-3xl mb-4 md:mb-6 text-cyan-300">ROZBUDOWANY</h3>
+        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">Dla projektów wymagających spokojnego planowania.</p>
+        <ul class="space-y-3 md:space-y-4 text-base text-gray-200">
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Konsultacje strategiczne</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Architektura treści</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Rozbudowane wdrożenie</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Wsparcie po starcie</li>
+          <li class="flex items-start"><span class="text-cyan-300 mr-3">•</span> Analiza wyników</li>
         </ul>
       </div>
     </div>
 
-    <p class="text-center text-sm md:text-base text-gray-300 mt-10 md:mt-12 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s">
+    <p class="text-center text-base md:text-lg text-gray-300 mt-12 md:mt-16 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s">
       Każdy projekt wyceniam indywidualnie. Pakiety określają zakres współpracy, nie sztywną cenę.
     </p>
   </section>
@@ -542,7 +542,7 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('section > *:not(.overlay-gradient):not(.unicorn-bg), .glass-card, .glass-card-highlight, h2, p, ul, img').forEach(el => {
-      el.classList.add('animate-fade-in'); // initial opacity 0
+      el.classList.add('animate-fade-in');
       observer.observe(el);
     });
   </script>
