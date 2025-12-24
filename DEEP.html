@@ -48,6 +48,11 @@
   <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- UNICORN STUDIO BACKGROUND SCRIPT -->
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornstudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head||document.body).appendChild(i)}}();
+  </script>
+
   <!-- CUSTOM STYLES -->
   <style>
     html {
@@ -60,10 +65,9 @@
       overflow-x: hidden;
       background: transparent;
       position: relative;
-      min-height: 100vh;
     }
 
-    /* UNICORN STUDIO BACKGROUND */
+    /* UNICORN STUDIO BACKGROUND - NAJWAŻNIEJSZE! */
     .unicorn-bg {
       position: fixed;
       top: 0;
@@ -127,7 +131,6 @@
 
     .animate-fade-in {
       animation: fadeIn 0.8s ease-out forwards;
-      opacity: 0;
     }
 
     /* Glassmorphism effect */
@@ -173,6 +176,10 @@
 
     /* Responsywne poprawki */
     @media (max-width: 640px) {
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
       .overlay-gradient {
         background: linear-gradient(
           135deg,
@@ -180,6 +187,16 @@
           rgba(0, 20, 40, 0.5) 100%
         );
       }
+    }
+
+    /* Gradient border animation */
+    @keyframes borderFlow {
+      0%, 100% { border-color: rgba(34, 211, 238, 0.3); }
+      50% { border-color: rgba(147, 51, 234, 0.3); }
+    }
+
+    .animated-border {
+      animation: borderFlow 3s ease-in-out infinite;
     }
   </style>
 </head>
@@ -191,11 +208,6 @@
   
   <!-- GRADIENT OVERLAY FOR TEXT READABILITY -->
   <div class="overlay-gradient"></div>
-
-  <!-- Ładowanie skryptu Unicorn Studio (asynchronicznie) -->
-  <script type="text/javascript">
-    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.async=!0,i.onload=function(){if(!window.UnicornStudio.isInitialized){UnicornStudio.init();window.UnicornStudio.isInitialized=!0}},document.body.appendChild(i)}}();
-  </script>
 
   <!-- NAVIGATION -->
   <nav class="container mx-auto px-4 sm:px-6 py-6 md:py-8 relative z-20">
@@ -224,8 +236,8 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col items-center justify-center lg:hidden">
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-50 hidden flex-col items-center justify-center lg:hidden">
     <button id="menuClose" class="absolute top-6 right-6 text-3xl text-gray-200 hover:text-cyan-300 focus-visible:outline-none" aria-label="Zamknij menu">
       ×
     </button>
@@ -318,6 +330,7 @@
     </h2>
 
     <div class="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
+      <!-- Card 1 -->
       <div class="glass-card rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in" style="animation-delay: 0.2s">
         <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300">START</h3>
         <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Prosta, estetyczna strona dla małej firmy lub osoby.</p>
@@ -330,6 +343,7 @@
         </ul>
       </div>
 
+      <!-- Card 2 (Highlighted) -->
       <div class="glass-card-highlight rounded-2xl p-6 md:p-8 lg:p-10 hover-lift transform md:-translate-y-2 animate-fade-in" style="animation-delay: 0.3s">
         <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300 neon-glow">BUSINESS</h3>
         <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Strona firmowa z uporządkowaną strukturą i ofertą.</p>
@@ -342,6 +356,7 @@
         </ul>
       </div>
 
+      <!-- Card 3 -->
       <div class="glass-card rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in" style="animation-delay: 0.4s">
         <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-cyan-300">ROZBUDOWANY</h3>
         <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">Dla projektów wymagających spokojnego planowania.</p>
@@ -364,27 +379,65 @@
   <section id="portfolio" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-center mb-12 md:mb-20 animate-fade-in">Portfolio</h2>
 
+    <!-- First row -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.2s">
-        <img src="projekt-1.webp" alt="Projekt 1 - Strona firmowa" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-1.webp" 
+          alt="Projekt 1 - Strona firmowa"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.3s">
-        <img src="projekt-2.webp" alt="Projekt 2 - Aplikacja webowa" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-2.webp" 
+          alt="Projekt 2 - Aplikacja webowa"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.4s">
-        <img src="projekt-3.webp" alt="Projekt 3 - Sklep internetowy" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-3.webp" 
+          alt="Projekt 3 - Sklep internetowy"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
     </div>
 
+    <!-- Second row -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.5s">
-        <img src="projekt-4.webp" alt="Projekt 4 - Landing page" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-4.webp" 
+          alt="Projekt 4 - Landing page"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.6s">
-        <img src="projekt-5.webp" alt="Projekt 5 - Portal informacyjny" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-5.webp" 
+          alt="Projekt 5 - Portal informacyjny"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
       <div class="group overflow-hidden rounded-xl md:rounded-2xl glass-card hover-lift animate-fade-in" style="animation-delay: 0.7s">
-        <img src="projekt-6.webp" alt="Projekt 6 - Blog profesjonalny" width="600" height="400" loading="lazy" class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
+        <img 
+          src="projekt-6.webp" 
+          alt="Projekt 6 - Blog profesjonalny"
+          width="600"
+          height="400"
+          loading="lazy"
+          class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition duration-500">
       </div>
     </div>
 
@@ -425,25 +478,54 @@
         </div>
       </div>
 
-      <form action="https://formspree.io/f/mlgrbnvg" method="POST" class="space-y-5 md:space-y-7 glass-card-highlight rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in" id="contactForm" style="animation-delay: 0.3s">
+      <!-- Contact Form -->
+      <form 
+        action="https://formspree.io/f/mlgrbnvg" 
+        method="POST" 
+        class="space-y-5 md:space-y-7 glass-card-highlight rounded-2xl p-6 md:p-8 lg:p-10 hover-lift animate-fade-in"
+        id="contactForm"
+        style="animation-delay: 0.3s">
+        
         <div>
-          <input type="text" name="imie" placeholder="Imię *" required class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400">
+          <input 
+            type="text" 
+            name="imie" 
+            placeholder="Imię *" 
+            required 
+            class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400 focus-visible:outline-none">
         </div>
         
         <div>
-          <input type="email" name="email" placeholder="Email *" required class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400" id="emailInput">
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Email *" 
+            required 
+            class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400 focus-visible:outline-none"
+            id="emailInput">
           <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Proszę podać prawidłowy adres email</p>
         </div>
         
         <div>
-          <input type="text" name="temat" placeholder="Temat (opcjonalnie)" class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400">
+          <input 
+            type="text" 
+            name="temat" 
+            placeholder="Temat (opcjonalnie)" 
+            class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400 focus-visible:outline-none">
         </div>
         
         <div>
-          <textarea name="wiadomosc" rows="5" placeholder="Napisz kilka zdań o projekcie lub problemie *" required class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400 resize-none"></textarea>
+          <textarea 
+            name="wiadomosc" 
+            rows="5" 
+            placeholder="Napisz kilka zdań o projekcie lub problemie *" 
+            required 
+            class="w-full bg-black/40 border border-cyan-400/40 rounded-lg px-4 md:px-6 py-3 md:py-4 focus:border-cyan-300 focus:bg-black/60 outline-none transition duration-300 text-white placeholder-gray-400 focus-visible:outline-none resize-none"></textarea>
         </div>
         
-        <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-medium py-3 md:py-4 rounded-xl hover:from-cyan-300 hover:to-blue-400 transition duration-300 text-base md:text-lg focus-visible:outline-none shadow-lg shadow-cyan-500/30 hover-lift">
+        <button 
+          type="submit" 
+          class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-medium py-3 md:py-4 rounded-xl hover:from-cyan-300 hover:to-blue-400 transition duration-300 text-base md:text-lg focus-visible:outline-none shadow-lg shadow-cyan-500/30 hover-lift">
           Wyślij zapytanie
         </button>
         
@@ -462,7 +544,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // Mobile menu
+    // Mobile menu functionality
     const menuToggle = document.getElementById('menuToggle');
     const menuClose = document.getElementById('menuClose');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -480,10 +562,12 @@
     menuToggle.addEventListener('click', openMobileMenu);
     menuClose.addEventListener('click', closeMobileMenu);
 
+    // Close menu when clicking on links
     document.querySelectorAll('#mobileMenu a').forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
 
+    // Close menu with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         closeMobileMenu();
@@ -496,7 +580,7 @@
     const emailError = document.getElementById('emailError');
 
     contactForm.addEventListener('submit', function(e) {
-      const email = emailInput.value.trim();
+      const email = emailInput.value;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       
       if (!emailRegex.test(email)) {
@@ -510,40 +594,57 @@
       }
     });
 
+    // Reset error on input
     emailInput.addEventListener('input', function() {
       emailError.classList.add('hidden');
       emailInput.classList.remove('border-red-400');
     });
 
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
-        const target = document.querySelector(targetId);
-        if (target) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
           e.preventDefault();
           window.scrollTo({
-            top: target.offsetTop - 80,
+            top: targetElement.offsetTop - 80,
             behavior: 'smooth'
           });
         }
       });
     });
 
-    // Intersection Observer for fade-in animations
+    // Add animation on scroll with staggered delays
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+          // Staggered animation delay
+          const delay = (index % 6) * 0.1;
+          entry.target.style.animationDelay = `${delay}s`;
           entry.target.classList.add('animate-fade-in');
         }
       });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('section > *:not(.overlay-gradient):not(.unicorn-bg), .glass-card, .glass-card-highlight, h2, p, ul, img').forEach(el => {
-      el.classList.add('animate-fade-in'); // initial opacity 0
-      observer.observe(el);
+    // Observe elements to animate
+    document.querySelectorAll('section, .glass-card, .glass-card-highlight').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Initialize Unicorn Studio background
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
+        UnicornStudio.init();
+        window.UnicornStudio.isInitialized = true;
+      }
     });
   </script>
 </body>

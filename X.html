@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ewa Możejewska – Projektowanie stron internetowych dla firm</title>
+  <meta name="description" content="Projektuję logiczne i uporządkowane strony internetowe dla firm. Architektura informacji, UX i frontend. Strony szybkie, czytelne i gotowe do rozwoju.">
+  <meta name="author" content="Ewa Możejewska">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mozejewska.studio/">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CUSTOM STYLES -->
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      background: transparent;
+      min-height: 100vh;
+    }
+
+    /* Delikatny ciemny overlay dla lepszej czytelności tekstu na animowanym tle */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -9;
+      pointer-events: none;
+    }
+
+    /* Piękny scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #22d3ee;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="bg-transparent text-white">
+
+  <!-- UNICORN STUDIO ANIMATED BACKGROUND -->
+  <div data-us-project="p7Ff6pfTrb5Gs59C7nLC" class="fixed inset-0 -z-10"></div>
+
+  <!-- Skrypt Unicorn Studio – ładowany dopiero po załadowaniu DOM -->
+  <script type="text/javascript">
+    !function () {
+      if (!window.UnicornStudio) {
+        window.UnicornStudio = { isInitialized: false };
+        var i = document.createElement("script");
+        i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js";
+        i.async = true;
+        i.onload = function () {
+          if (!window.UnicornStudio.isInitialized) {
+            UnicornStudio.init();
+            window.UnicornStudio.isInitialized = true;
+          }
+        };
+        document.body.appendChild(i);
+      }
+    }();
+  </script>
+
+  <!-- NAV -->
+  <nav class="container mx-auto px-6 py-8 relative z-10">
+    <div class="flex items-center justify-between">
+      <span class="text-2xl font-medium tracking-tight">Ewa Możejewska</span>
+
+      <div class="hidden lg:flex gap-10 text-sm text-gray-300">
+        <a href="#omnie" class="hover:text-cyan-400 transition">O mnie</a>
+        <a href="#uslugi" class="hover:text-cyan-400 transition">Zakres</a>
+        <a href="#portfolio" class="hover:text-cyan-400 transition">Portfolio</a>
+        <a href="#kontakt" class="hover:text-cyan-400 transition">Kontakt</a>
+      </div>
+
+      <a href="#kontakt" class="border border-cyan-400/40 px-6 py-3 rounded-lg text-sm hover:bg-cyan-400/10 transition">
+        Porozmawiajmy
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="container mx-auto px-6 py-32 text-center relative z-10">
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tight mb-10">
+      Projektuję strony,<br>
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+        które porządkują Twój biznes
+      </span>
+    </h1>
+
+    <p class="text-2xl text-gray-300 font-light max-w-4xl mx-auto mb-10">
+      Strategia • Architektura informacji • Frontend<br>
+      Strona jako narzędzie decyzyjne, nie dekoracja
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <a href="#omnie" class="bg-cyan-400 text-black px-10 py-4 rounded-lg hover:bg-cyan-300 transition">
+        Poznaj mnie
+      </a>
+      <a href="#portfolio" class="border border-cyan-400/50 px-10 py-4 rounded-lg hover:bg-cyan-400/10 transition">
+        Portfolio
+      </a>
+    </div>
+  </section>
+
+  <!-- O MNIE -->
+  <section id="omnie" class="container mx-auto px-6 py-24 relative z-10">
+    <div class="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extralight mb-8">
+          Ewa Możejewska<br>
+          <span class="text-cyan-400 text-xl">Web Strategy & Frontend Architecture</span>
+        </h2>
+
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Projektuję strony internetowe jako uporządkowane narzędzia dla biznesu.
+          Zaczynam od zrozumienia oferty, odbiorców i celu strony — nie od grafiki.
+        </p>
+
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Pomagam poukładać treści, strukturę i ścieżkę użytkownika tak,
+          aby strona była czytelna, logiczna i wspierała decyzje klientów.
+        </p>
+
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          Dopiero na tej podstawie tworzę architekturę informacji
+          i wdrażam frontend oparty o czysty, semantyczny kod.
+        </p>
+
+        <ul class="space-y-3 text-sm">
+          <li>✔ Architektura informacji i UX</li>
+          <li>✔ HTML5, CSS3, czysty JavaScript</li>
+          <li>✔ Mobile-First i dostępność</li>
+          <li>✔ Techniczne SEO i wydajność</li>
+          <li>✔ Wdrożenie i wsparcie</li>
+        </ul>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="ewa.webp" alt="Ewa Możejewska – Web Strategy & Frontend"
+          class="w-full max-w-md aspect-[4/5] object-cover rounded-2xl shadow-2xl shadow-cyan-500/20">
+      </div>
+    </div>
+  </section>
+
+  <!-- USŁUGI -->
+  <section id="uslugi" class="container mx-auto px-6 py-24 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extralight text-center mb-20">
+      Zakres współpracy
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-white/5 border border-cyan-400/20 rounded-2xl p-10 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <h3 class="text-2xl mb-4">START</h3>
+        <p class="text-gray-400 mb-6">Prosta, estetyczna strona dla małej firmy lub osoby.</p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• One Page lub mała strona</li>
+          <li>• Pomoc w treściach</li>
+          <li>• Responsywność</li>
+          <li>• Podstawowe SEO</li>
+          <li>• Wdrożenie</li>
+        </ul>
+      </div>
+
+      <div class="bg-white/5 border border-cyan-400/40 rounded-2xl p-10 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <h3 class="text-2xl mb-4">BUSINESS</h3>
+        <p class="text-gray-400 mb-6">Strona firmowa z uporządkowaną strukturą i ofertą.</p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Kilka podstron</li>
+          <li>• Logiczna struktura</li>
+          <li>• Indywidualny projekt</li>
+          <li>• Frontend + SEO</li>
+        </ul>
+      </div>
+
+      <div class="bg-white/5 border border-cyan-400/20 rounded-2xl p-10 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <h3 class="text-2xl mb-4">ROZBUDOWANY</h3>
+        <p class="text-gray-400 mb-6">Dla projektów wymagających spokojnego planowania.</p>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>• Konsultacje</li>
+          <li>• Architektura treści</li>
+          <li>• Rozbudowane wdrożenie</li>
+          <li>• Wsparcie po starcie</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-gray-400 mt-12 max-w-3xl mx-auto">
+      Każdy projekt wyceniam indywidualnie. Pakiety określają zakres współpracy, nie sztywną cenę.
+    </p>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="container mx-auto px-6 py-24 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extralight text-center mb-20">Portfolio</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-1.webp" alt="Projekt 1" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-2.webp" alt="Projekt 2" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-3.webp" alt="Projekt 3" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-4.webp" alt="Projekt 4" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-5.webp" alt="Projekt 5" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="overflow-hidden rounded-2xl border border-cyan-400/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-500/10">
+        <img src="projekt-6.webp" alt="Projekt 6" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="container mx-auto px-6 py-24 relative z-10 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extralight mb-8">Porozmawiajmy o Twojej stronie</h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Jeśli masz pomysł, problem do rozwiązania albo po prostu chcesz sprawdzić, czy to dobry moment na nową stronę — napisz.
+        </p>
+        <p class="text-gray-400 mb-6">
+          Pierwsza rozmowa jest niezobowiązująca.<br>
+          Odpowiadam zazwyczaj w ciągu 24–48 godzin.
+        </p>
+        <div class="text-sm text-gray-400 space-y-2">
+          <p>Email: <a href="mailto:kontakt@mozejewska.studio" class="text-cyan-400">kontakt@mozejewska.studio</a></p>
+          <p>Telefon: <a href="tel:+48604580412" class="text-cyan-400">+48 604 580 412</a></p>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/mlgrbnvg" method="POST" class="space-y-7 bg-white/10 border border-cyan-400/20 rounded-2xl p-10 backdrop-blur-md shadow-lg shadow-cyan-500/10">
+        <input type="text" name="imie" placeholder="Imię" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+        <input type="email" name="email" placeholder="Email" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+        <input type="text" name="temat" placeholder="Temat (opcjonalnie)" class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200">
+        <textarea name="wiadomosc" rows="7" placeholder="Napisz kilka zdań o projekcie lub problemie" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-6 py-5 focus:border-cyan-400 focus:bg-black/20 outline-none transition text-white placeholder-gray-200 resize-none"></textarea>
+        <button type="submit" class="w-full bg-cyan-400 text-black font-medium py-5 rounded-xl hover:bg-cyan-300 transition text-lg">
+          Wyślij zapytanie
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 text-center text-gray-500 text-sm relative z-10">
+    <p class="mb-2">© 2025 Ewa Możejewska</p>
+    <p>Projekt i wykonanie: <span class="text-gray-300">Ewa Możejewska</span></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ewa Możejewska – Projektowanie stron internetowych dla firm</title>
+  <meta name="description" content="Projektuję logiczne i uporządkowane strony internetowe dla firm. Architektura informacji, UX i frontend. Strony szybkie, czytelne i gotowe do rozwoju.">
+  <meta name="author" content="Ewa Możejewska">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mozejewska.studio/">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Ewa Możejewska – Projektowanie stron internetowych dla firm">
+  <meta property="og:description" content="Projektuję logiczne i uporządkowane strony internetowe dla firm. Architektura informacji, UX i frontend.">
+  <meta property="og:image" content="https://mozejewska.studio/ewa.webp">
+  <meta property="og:url" content="https://mozejewska.studio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ewa Możejewska",
+    "jobTitle": "Web Strategy & Frontend Architecture",
+    "url": "https://mozejewska.studio/",
+    "email": "kontakt@mozejewska.studio",
+    "telephone": "+48-604-580-412",
+    "image": "https://mozejewska.studio/ewa.webp"
+  }
+  </script>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- UNICORN STUDIO BACKGROUND - ORYGINALNY KOD Z TWOJEJ STRONY -->
+  <div data-us-project="p7Ff6pfTrb5Gs59C7nLC" class="fixed inset-0 -z-10"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornstudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head||document.body).appendChild(i)}}();
+  </script>
+
+  <!-- CUSTOM STYLES -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      background: transparent;
+      position: relative;
+      color: white;
+    }
+
+    /* Overlay dla lepszej czytelności tekstu na animowanym tle */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 10, 20, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      z-index: -5;
+      pointer-events: none;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #22d3ee, #0ea5e9);
+      border-radius: 5px;
+    }
+
+    /* Focus states */
+    a:focus-visible, 
+    button:focus-visible, 
+    input:focus-visible, 
+    textarea:focus-visible {
+      outline: 2px solid #22d3ee;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* Animacje */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Glass effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    /* Hover effects */
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      body::before {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 10, 20, 0.6) 100%
+        );
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="container mx-auto px-4 sm:px-6 py-4 md:py-6 relative z-30">
+    <div class="flex items-center justify-between">
+      <span class="text-xl md:text-2xl font-medium tracking-tight">Ewa Możejewska</span>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex gap-8 text-sm text-gray-200">
+        <a href="#omnie" class="hover:text-cyan-300 transition">O mnie</a>
+        <a href="#uslugi" class="hover:text-cyan-300 transition">Zakres</a>
+        <a href="#portfolio" class="hover:text-cyan-300 transition">Portfolio</a>
+        <a href="#kontakt" class="hover:text-cyan-300 transition">Kontakt</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:block">
+        <a href="#kontakt" class="glass px-5 py-2.5 rounded-lg text-sm hover:bg-cyan-400/20 transition">
+          Porozmawiajmy
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menuToggle" class="lg:hidden text-2xl hover:text-cyan-300" aria-label="Menu">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-40 hidden flex-col items-center justify-center">
+    <button id="menuClose" class="absolute top-6 right-6 text-3xl hover:text-cyan-300">×</button>
+    <div class="flex flex-col gap-8 text-2xl text-center">
+      <a href="#omnie" class="hover:text-cyan-300 transition" onclick="closeMenu()">O mnie</a>
+      <a href="#uslugi" class="hover:text-cyan-300 transition" onclick="closeMenu()">Zakres</a>
+      <a href="#portfolio" class="hover:text-cyan-300 transition" onclick="closeMenu()">Portfolio</a>
+      <a href="#kontakt" class="hover:text-cyan-300 transition" onclick="closeMenu()">Kontakt</a>
+      <a href="#kontakt" class="mt-8 border border-cyan-400/40 px-8 py-3 rounded-lg hover:bg-cyan-400/10 transition" onclick="closeMenu()">
+        Porozmawiajmy
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="container mx-auto px-4 sm:px-6 py-20 md:py-32 text-center relative z-10">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extralight mb-8 md:mb-10 animate-fade-in">
+      Projektuję strony,<br>
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+        które porządkują Twój biznes
+      </span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-200 mb-8 md:mb-10 max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+      Strategia • Architektura informacji • Frontend<br>
+      Strona jako narzędzie decyzyjne, nie dekoracja
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.4s">
+      <a href="#omnie" class="bg-cyan-400 text-black px-8 py-3.5 rounded-lg hover:bg-cyan-300 transition font-medium">
+        Poznaj mnie
+      </a>
+      <a href="#portfolio" class="glass px-8 py-3.5 rounded-lg hover:bg-cyan-400/20 transition">
+        Portfolio
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="omnie" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-extralight mb-6">
+          Ewa Możejewska<br>
+          <span class="text-cyan-300 text-lg md:text-xl">Web Strategy & Frontend Architecture</span>
+        </h2>
+
+        <div class="space-y-4 text-gray-200 mb-6">
+          <p>Projektuję strony internetowe jako uporządkowane narzędzia dla biznesu.</p>
+          <p>Pomagam poukładać treści, strukturę i ścieżkę użytkownika tak, aby strona była czytelna, logiczna i wspierała decyzje klientów.</p>
+          <p>Dopiero na tej podstawie tworzę architekturę informacji i wdrażam frontend oparty o czysty, semantyczny kod.</p>
+        </div>
+
+        <ul class="space-y-2 text-sm md:text-base">
+          <li class="flex items-center"><span class="text-cyan-300 mr-2">✔</span> Architektura informacji i UX</li>
+          <li class="flex items-center"><span class="text-cyan-300 mr-2">✔</span> HTML5, CSS3, czysty JavaScript</li>
+          <li class="flex items-center"><span class="text-cyan-300 mr-2">✔</span> Mobile-First i dostępność</li>
+          <li class="flex items-center"><span class="text-cyan-300 mr-2">✔</span> Techniczne SEO i wydajność</li>
+          <li class="flex items-center"><span class="text-cyan-300 mr-2">✔</span> Wdrożenie i wsparcie</li>
+        </ul>
+      </div>
+
+      <div class="flex justify-center">
+        <img 
+          src="ewa.webp" 
+          alt="Ewa Możejewska"
+          width="400"
+          height="500"
+          loading="lazy"
+          class="w-full max-w-md rounded-2xl shadow-2xl shadow-cyan-500/20 hover-lift">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="uslugi" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
+    <h2 class="text-3xl md:text-5xl font-extralight text-center mb-12 md:mb-20">
+      Zakres współpracy
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="glass-dark rounded-2xl p-8 hover-lift">
+        <h3 class="text-2xl mb-4 text-cyan-300">START</h3>
+        <p class="text-gray-300 mb-6">Prosta, estetyczna strona dla małej firmy lub osoby.</p>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>• One Page lub mała strona</li>
+          <li>• Pomoc w treściach</li>
+          <li>• Responsywność</li>
+          <li>• Podstawowe SEO</li>
+          <li>• Wdrożenie</li>
+        </ul>
+      </div>
+
+      <div class="glass-dark border border-cyan-400/40 rounded-2xl p-8 hover-lift">
+        <h3 class="text-2xl mb-4 text-cyan-300">BUSINESS</h3>
+        <p class="text-gray-300 mb-6">Strona firmowa z uporządkowaną strukturą i ofertą.</p>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>• Kilka podstron</li>
+          <li>• Logiczna struktura</li>
+          <li>• Indywidualny projekt</li>
+          <li>• Frontend + SEO</li>
+        </ul>
+      </div>
+
+      <div class="glass-dark rounded-2xl p-8 hover-lift">
+        <h3 class="text-2xl mb-4 text-cyan-300">ROZBUDOWANY</h3>
+        <p class="text-gray-300 mb-6">Dla projektów wymagających spokojnego planowania.</p>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>• Konsultacje</li>
+          <li>• Architektura treści</li>
+          <li>• Rozbudowane wdrożenie</li>
+          <li>• Wsparcie po starcie</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-center text-gray-300 mt-12 max-w-3xl mx-auto">
+      Każdy projekt wyceniam indywidualnie. Pakiety określają zakres współpracy, nie sztywną cenę.
+    </p>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10">
+    <h2 class="text-3xl md:text-5xl font-extralight text-center mb-12">Portfolio</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-1.webp" alt="Projekt 1" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-2.webp" alt="Projekt 2" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-3.webp" alt="Projekt 3" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-4.webp" alt="Projekt 4" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-5.webp" alt="Projekt 5" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+      <div class="glass-dark rounded-xl overflow-hidden hover-lift">
+        <img src="projekt-6.webp" alt="Projekt 6" loading="lazy" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt" class="container mx-auto px-4 sm:px-6 py-16 md:py-24 relative z-10 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-extralight mb-6">Porozmawiajmy o Twojej stronie</h2>
+        <p class="text-gray-200 mb-4">Jeśli masz pomysł, problem do rozwiązania albo chcesz sprawdzić, czy to dobry moment na nową stronę — napisz.</p>
+        <p class="text-gray-300 mb-6">Pierwsza rozmowa jest niezobowiązująca. Odpowiadam zazwyczaj w ciągu 24–48 godzin.</p>
+        <div class="space-y-2">
+          <p>Email: <a href="mailto:kontakt@mozejewska.studio" class="text-cyan-300">kontakt@mozejewska.studio</a></p>
+          <p>Telefon: <a href="tel:+48604580412" class="text-cyan-300">+48 604 580 412</a></p>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/mlgrbnvg" method="POST" class="glass-dark rounded-2xl p-6 md:p-8 space-y-5">
+        <input type="text" name="imie" placeholder="Imię" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-4 py-3 focus:border-cyan-400 outline-none text-white">
+        <input type="email" name="email" placeholder="Email" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-4 py-3 focus:border-cyan-400 outline-none text-white">
+        <input type="text" name="temat" placeholder="Temat (opcjonalnie)" class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-4 py-3 focus:border-cyan-400 outline-none text-white">
+        <textarea name="wiadomosc" rows="5" placeholder="Wiadomość" required class="w-full bg-black/30 border border-cyan-400/30 rounded-lg px-4 py-3 focus:border-cyan-400 outline-none text-white"></textarea>
+        <button type="submit" class="w-full bg-cyan-400 text-black py-3 rounded-lg hover:bg-cyan-300 transition">
+          Wyślij zapytanie
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-gray-400 text-sm">
+    <p class="mb-2">© 2025 Ewa Możejewska</p>
+    <p>Projekt i wykonanie: <span class="text-gray-300">Ewa Możejewska</span></p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+
+    // Close menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Form validation
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const email = this.querySelector('input[type="email"]');
+      if (!email.value.includes('@')) {
+        e.preventDefault();
+        alert('Proszę podać prawidłowy adres email');
+        email.focus();
+      }
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
